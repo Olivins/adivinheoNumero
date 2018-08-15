@@ -5,18 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/numeros"
+    >
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:string="@string/Digite um número"
+        android:layout_width="196dp"
+        android:layout_height="40dp"
+        android:text="@string/digite"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Digite um número" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/numero"
@@ -33,11 +36,20 @@
         android:textAlignment="center"
         android:textSize="30sp" />
 
+    <Button
+        android:id="@+id/botao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textAlignment="center"
+        android:layout_gravity="center_vertical|center_horizontal"
+        />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:text="Numero Tentativas"
+        android:text="@string/qtdtent"
         android:textAlignment="center"
         android:textSize="24sp" />
 
@@ -45,7 +57,9 @@
         android:id="@+id/tentativas"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:ems="10" />
+        android:ems="10"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
 
 
 </LinearLayout>

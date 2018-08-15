@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">adivinhaonumero</string>
+    <string name="maior">Tente um número maior</string>
+    <string name="menor">Tente um número menor</string>
+    <string name="acertou">Você acertou o numero</string>
+    <string name="digite">Digite um numero</string>
+    <string name="qtdtent">Numero Tentativas</string>
 </resources>

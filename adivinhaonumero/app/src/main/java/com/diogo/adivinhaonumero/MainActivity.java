@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -24,8 +25,17 @@ public class MainActivity extends Activity implements View.OnKeyListener {
         tentativas = findViewById(R.id.tentativas);
         numero = findViewById(R.id.numero);
         numero.setOnKeyListener(this);
-        sorteio = (int)(Math.random()*101);
+        sorteio = (int) (Math.random() * 101);
+        final Button botao = (Button) findViewById(R.id.botao);
+        botao.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                funcaoAcertou();
+            }
+        });
+
     }
+
+
 
     @Override
     public boolean onKey(View view, int i, KeyEvent keyEvent) {
@@ -40,17 +50,20 @@ public class MainActivity extends Activity implements View.OnKeyListener {
         int numerojogador = Integer.parseInt(numero.getText().toString());
         if (numerojogador == sorteio){
             chutes++;
-            mensagem.setText("Acertou");
-            tentativas.setText(chutes);
+            mensagem.setText("Você acertou o número");
+            tentativas.setText(String.valueOf(chutes));
+            numero.setText("");
 
             }else if( numerojogador > sorteio){
                 chutes++;
-                mensagem.setText("Tente um número menor");
-                tentativas.setText(chutes);
+                mensagem.setText("Tente um numero menor");
+                tentativas.setText(String.valueOf(chutes));
+                numero.setText("");
             }else {
-            chutes++;
-            mensagem.setText("Tente um número maior");
-            tentativas.setText(chutes);
+                chutes++;
+                mensagem.setText("Tente um número maior");
+                tentativas.setText(String.valueOf(chutes));
+                numero.setText("");
             }
         }
 }
